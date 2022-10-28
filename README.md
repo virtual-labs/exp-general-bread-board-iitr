@@ -3,7 +3,7 @@
 
 <b>Discipline | <b>Electronics and Communication Engineering
 :--|:--|
-<b> Lab | <b> Fill your lab name here
+<b> Lab | <b> Analog and Digital Electronics-I
 <b> Experiment|     <b> To familiarise with genrarl breadboard
 
 ### About the Experiment 
