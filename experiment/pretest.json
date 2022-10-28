@@ -1,39 +1,10 @@
-{
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+[{"question":"Total number of holes in one unit of breadboard is","answers":{"a":"240","b":"420","c":"640","d":"460"},"correctAnswer":"b"},
+{"question":"In a unit of breadboard, five vertical terminals are arranged in","answers":{"a":"64 groups","b":"62 groups","c":"60 groups","d":"66 groups"},"correctAnswer":"a"},
+{"question":"The pitch of metal strip and socket inside the breadboard is","answers":{"a":"1.0\"","b":"10\"","c":"0.1\"","d":"0.01\""},"correctAnswer":"c"},
+{"question":"The other name for horizontally connected terminals is","answers":{"a":"Connector","b":"Hole","c":"Node","d":"Power Rail"},"correctAnswer":"d"},
+{"question":"Which type of wire is not suitable for breadboard?","answers":{"a":"Single- core aluminium wire.","b":"Jumper wire.","c":"Stranded wire.","d":"Copper wire."},"correctAnswer":"c"},
+{"question":"The set of connected holes is called as","answers":{"a":"Terminal","b":"Junction","c":"Plug","d":"Node"},"correctAnswer":"d"},
+{"question":"The notch/dot of IC is placed such that it is directed towards","answers":{"a":"Left","b":"Right","c":"Up","d":"Down"},"correctAnswer":"a"},
+{"question":"Name the element of which clips of breadboard are built","answers":{"a":"Iron Potassium","b":"Nickel Silver","c":"Silver Chlorine","d":"Nitrogen Magnesium"},"correctAnswer":"b"},
+{"question":"The current limit for most of the bread boards is","answers":{"a":">1 amp","b":"<1 amp","c":"≤1 amp","d":"<0.1 amp"},"correctAnswer":"c"},
+{"question":"To make circuits quick and convenient, connections in most of the bread boards are made up of","answers":{"a":"Plastic","b":"Spring","c":"Mica","d":"Quartz"},"correctAnswer":"b"}]
