@@ -4,7 +4,7 @@
 <b>Discipline | <b>Electronics and Communication Engineering
 :--|:--|
 <b> Lab | <b> Analog and Digital Electronics-I
-<b> Experiment|     <b> To familiarise with genrarl breadboard
+<b> Experiment|     <b> To familiarise with general breadboard
 
 ### About the Experiment 
 
