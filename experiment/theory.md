@@ -19,14 +19,14 @@ Here are some types of a standard breadboard :-
 Moreover, there are different colors of breadboards (white, blue, red, green, yellow, transparent). Fig. 2 shows different types of breadboards.
 <center>
   
-![fig. 2](images/fig.2.jpg)  
+![fig.2](images/fig.2.jpg)  
 
 **Fig. 2 Different types of breadboards** </center>
 
 Breadboards have many tiny sockets (called 'holes') arranged on a 0.1" grid. Sockets are used to hold the components in a circuit. The leads of most components can be pushed straight into the holes. Total no. of holes in one unit of breadboard is 420. There are sixty-four groups of 5 horizontally connected terminals and four buses of 25 vertically connected terminals. The top and bottom rows of holes are connected horizontally while the remaining holes are connected vertically as shown in Fig. 3. A middle divider or “ravine” runs vertically and divides the breadboard symmetrically into left and right sides. The halves of the breadboard are electrically isolated from each other by the middle divider.
 <center>
 
-![fig. 3](images/fig.3.jpg)  
+![fig.3](images/fig.3.jpg)  
 
 **Fig. 3 Breadboard holes connections**</center>
 
@@ -77,14 +77,14 @@ Fig. 9 shows, an LED inserted into a breadboard. Here each leg of the LED is pla
 Integrated circuits(ICs) are inserted across the central gap with their notch or dot to the left.IC pins are numbered anti-clockwise around the IC starting near the notch or dot. Fig. 10 shows the numbering for 8-pin and 14-pin ICs, but the principle is the same for all sizes.
 <center>
   
-![fig. 10 ](images/fig.10.jpg )  
+![fig. 10](images/fig.10.jpg )  
 
 **Fig. 10 Numbering for 8-pin and 14-pin ICs** </center>
 
 Earlier we mentioned that the ravine isolates the two sides of a breadboard. This ravine serves a very important purpose. Many ICs are manufactured specifically to fit onto breadboards. In order to minimize the amount of space they take up on the breadboard, they come in what is known as a Dual in-line Package or DIP. These DIP chips have legs that come out of both sides and fit perfectly over that ravine. Since each leg on the IC is unique, we don’t want both sides to be connected to each other. That is where the separation in the middle of the board comes in handy. Thus, we can connect components to each side of the IC without interfering with the functionality of the leg on the opposite side.
 <center>
   
-![fig. 11 ](images/fig.11.jpg )  
+![fig. 11](images/fig.11.jpg )  
 
 **Fig. 11 Two DIP ICs inserted in breadboard**  </center>
 
@@ -98,12 +98,12 @@ Suppose we want to construct the following series-parallel combination circuit o
 The recommended way to do so on a breadboard would be to arrange the resistors in approximately the same pattern as seen in the schematic. If 24 volts is required and we only have 6-volt batteries available, four may be connected in series to achieve the same effect:
 <center>
 
-![fig. 13 ](images/fig.13.jpg )  </center>
+![fig. 13](images/fig.13.jpg )  </center>
 
 This is by no means the only way to connect these four resistors together to form the circuit shown in the schematic. An alternative layout may be:
 <center>
   
-![fig. 14 ](images/fig.14.jpg)   
+![fig. 14](images/fig.14.jpg)   
 
 **Fig. 13: Series - Parallel Circuit construction on a Terminal Strip** </center>
 

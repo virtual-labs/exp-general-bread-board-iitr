@@ -7,6 +7,9 @@
     <title>To familiarise with breadboard</title>
 
     <!--JSplumb-->
+
+  
+
     <link rel="stylesheet" href="css\jsplumbtoolkit-defaults.css">
     <script src="js/jsplumb.min.js"></script>
 
@@ -145,7 +148,7 @@
 
             <div class="bottom">
                 <div>
-                    <button id="check" onclick="checkCircuit()">Check Connection</button>
+                    <button id="check" onclick="checkCircuit()" disabled>Check Connection</button>
                     <button id="reset" onclick="reload()">Reset</button>
                 </div>
             </div>
@@ -171,7 +174,7 @@
     
                 </div>
                 <button class="right_btn2" id="First2">Instructions</button>
-                <div class="Button-data" id="First_Data2">
+                <div class="Button-data" id="First_Data2" >
                     <div class="panel">
                         <button class="close-btn" id="close-btn2"><span>&#10005</span></button>
                         <p>Series connections on Breadboard -</p>
@@ -181,7 +184,7 @@
                         <li>Make connections as per the circuit diagram.</li>
                         <figure>
                             <img src="images/image003.jpg" style="height: 160px; width:400px; margin-left: 15px;">
-                           <figcaption style="margin-left: 20px;">Fig. Circuit diagram for series connections of LEDs</figcaption>
+                           <figcaption style="margin-left: 20px;">Fig. 1 Circuit diagram for series connections of LEDs</figcaption>
                           </figure><br/>
                         <li>Click on Check Connections button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
                         <li>Observe output i.e. all LEDs will be ON.</li>
@@ -190,7 +193,7 @@
                     </div>
                 </div>
                 <button class="right_btn2" id="First3">Instructions</button>
-                <div class="Button-data" id="First_Data3">
+                <div class="Button-data" id="First_Data3" >
                     <div class="panel">
                         <button class="close-btn" id="close-btn3"><span>&#10005</span></button>
                         <p>Parallel connections on Breadboard -</p>
@@ -200,7 +203,7 @@
                             <li>Make connections as per the circuit diagram.</li>
                             <figure>
                                 <img src="images/image005.jpg" style="height: 160px; width:300px; margin-left: 50px;">
-                                <figcaption style="margin-left: 20px;">Fig. Circuit diagram for parallel connections of LEDs</figcaption>
+                                <figcaption style="margin-left: 20px;">Fig. 1 Circuit diagram for parallel connections of LEDs</figcaption>
                               </figure>
                               <br/>
                             <li>Click on Check Connections button. If connections are right, click on ‘OK’, then Simulation will become active.</li>
@@ -213,24 +216,24 @@
             <div class="Components" id="seriesComp">
                 <button class="right_btn" id="second">Components</button>
                 <div style="margin-top: 25px;">
-                    <button class="comp-btn" style="margin-left: 40px;" onclick="breadboard2()">Breadboard</button>
-                    <button class="comp-btn" onclick="supply2()">Supply</button>
+                    <button class="comp-btn" id="breadbutton" style="margin-left: 40px;" onclick="breadboard2()">Breadboard</button>
+                    <button class="comp-btn" id="supplybutton" onclick="supply2()">Supply</button>
                 </div>
                 <div>
-                    <button class="comp-btn" style="margin-left: 40px;" onclick="R21()" id="ic32">Resistance</button>                   
-                    <button class="comp-btn" onclick="led21();led22();led23();">LED</button>
+                    <button class="comp-btn" id="resistancebutton" style="margin-left: 40px;" onclick="R21()">Resistance</button>                   
+                    <button class="comp-btn" id="ledbutton" onclick="led21();led22();led23();">LED</button>
      
                 </div>
             </div>
             <div class="Components" id="parallelComp">
                 <button class="right_btn" id="second">Components</button>
                 <div style="margin-top: 25px;">
-                    <button class="comp-btn" style="margin-left: 40px;" onclick="breadboard3()">Breadboard</button>
-                    <button class="comp-btn" onclick="supply3()">Supply</button>
+                    <button class="comp-btn" id="breadbutton3" style="margin-left: 40px;" onclick="breadboard3()">Breadboard</button>
+                    <button class="comp-btn"  id="supplybutton3" onclick="supply3()">Supply</button>
                 </div>
                 <div>
-                    <button class="comp-btn" style="margin-left: 40px;" onclick="R31();R32();R33();" id="ic32">Resistance</button>
-                    <button class="comp-btn" onclick="led31();led32();led33();">LED</button>
+                    <button class="comp-btn" id="resistancebutton3" style="margin-left: 40px;" onclick="R31();R32();R33();" >Resistance</button>
+                    <button class="comp-btn" id="ledbutton3" onclick="led31();led32();led33();">LED</button>
    
                 </div>
             </div>
@@ -279,7 +282,7 @@
             </div>
             <div class="bottom">
                 <div>
-                    <button id="check" onclick="checkCircuit4()">Check Connection</button>
+                    <button id="check1" onclick="checkCircuit4()" disabled>Check Connection</button>
                     <button id="reset" onclick="reload()">Reset</button>
                 </div>
             </div>
@@ -291,22 +294,22 @@
                     <button class="close-btn" id="close-btn4"><span>&#10005</span></button>
                     <p>Familiarisation with Logic Gate connections of an IC 7432 - </p>
                     <br/>
-                    <ol type="1" style="padding-left: 20px;text-align: left;">
-                        <li>Click on the Component button to place components on the table.</li>
+                    <ol type="1" style="padding-left: 20px;text-align: justify;">
+                        <li>Click on the '<b>Component</b>' button to place components on the table.</li>
                         <li>Connect pin 14 to the power supply (+5V) and pin 7 to ground (0V). (Refer pin diagram of IC 7432).</li>
                         <li>Connect pin 1 and pin 2 to toggle switches A and B respectively.</li>
                         <li>Connect corresponding output terminal (pin 3) to resistance (220 Ω). The other end of resistance is connected to positive (+) terminal of LED.</li>
                         <li>Connect negative (–) terminal of the LED to ground.</li>
                         <figure>
                             <img src="images/image007.png" style="height: 150px; margin-left: 20px;">
-                            <figcaption style="margin-left: 100px;">Fig. Pin diagram of IC 7432</figcaption>
+                            <figcaption style="margin-left: 100px;">Fig. 1 Pin diagram of IC 7432</figcaption>
                           </figure>
                           <br/>
-                        <li>Click on Check Connections button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
+                        <li>Click on '<B>Check Connections</B>' button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
                         <li>Apply different combinations (0,0); (0,1); (1,0) and (1,1) to input terminals of one gate (say pins 1 and 2) by using toggle switches A and B.</li>
                         <li>Observe the corresponding output on the LED.</li>
                         <li>Fill the observed values in the Truth Table.</li>
-                        <li>Verify the Truth Table of OR gate from the experimental results by clicking on Check button, if outputs are correct then click on OK.</li>
+                        <li>Verify the Truth Table of OR gate from the experimental results by clicking on '<b>Check</b>' button, if outputs are correct then click on OK.</li>
                         <li>Repeat steps 3 to 10 for different gates of the IC. </li>
                     </ol>
 
@@ -317,14 +320,14 @@
                 <div class="Components2" style="padding: 10px;">
                     <button class="close-btn" id="close-btn5" style="margin-top: 7px;"><span>&#10005</span></button>
                     <div>
-                        <button onclick="breadboard4()">Breadboard</button>
-                        <button onclick="supply4()">Supply</button>
-                        <button onclick="ic7432()" id="ic32">IC7432</button>
+                        <button id="breadbutton4" onclick="breadboard4()">Breadboard</button>
+                        <button id="supplybutton4" onclick="supply4()">Supply</button>
+                        <button id="icbutton4" onclick="ic7432()">IC7432</button>
                     </div>
                     <div>
-                        <button onclick="led41()">LED</button>                      
-                        <button onclick="R41()">Resistance</button>                                        
-                        <button onclick="inputs()">Toggle Switches</button>
+                        <button id="ledbutton4" onclick="led41()">LED</button>                      
+                        <button id="resistancebutton4" onclick="R41()">Resistance</button>                                        
+                        <button id="inputsbutton4" onclick="inputs()">Toggle Switches</button>
                     </div>
                 </div>
             </div>
@@ -393,7 +396,7 @@
         </div>
     </div>
     <div id="copyright">
-        <h5>&copy; Copyright 2022 | Virtual Labs IIT Roorkee</h5>
+        <p style="font-weight:bold">&copy; Copyright 2022 Virtual Labs, IIT Roorkee</p>
     </div>
     <script src="js/index.js"></script>
 </body>
