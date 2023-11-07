@@ -342,6 +342,10 @@ button:focus {
 
 /*check connection and reset button*/
 
+button:disabled{
+    cursor: not-allowed;
+    opacity: 0.6;
+}
 .bottom {
     height: 60px;
     text-align: center;
@@ -355,7 +359,6 @@ button:focus {
     border: none;
     font-weight: bold;
     border-radius: 25px;
-    cursor: pointer;
     color: white;
 }
 
@@ -367,7 +370,18 @@ button:focus {
 #check:hover {
     color: rgb(0, 168, 8);
     background: white;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+#check1 {
+    border: 2px rgb(0, 168, 8) solid;
+    background: rgb(0, 168, 8);
+}
+
+#check1:hover {
+    color: rgb(0, 168, 8);
+    background: white;
+    font-size: 16px;
 }
 
 #reset {
@@ -378,7 +392,7 @@ button:focus {
 #reset:hover {
     color: rgb(255, 54, 54);
     background: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 
@@ -572,10 +586,10 @@ button:focus {
 .Button-data {
     position: fixed;
     right: 0;
-    bottom: 50px;
+    bottom: 10px;
     transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
-    overflow: hidden;
+    z-index:9999;
 }
 
 .Button-data.visible {
@@ -763,7 +777,7 @@ button:focus {
 #copyright {
     width: 1518px;
     height: 30px;
-    font-size: 15px;
+    font-size: 18px;
     padding-top: 10px;
     text-align: center;
     color: #fff;

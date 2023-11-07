@@ -107,4 +107,5 @@
 11.  Verify the **Truth Table** of 'OR' gate from the experimental results by clicking on **Check** button, if outputs are correct then click on **OK**.
 12.  Repeat steps 4 to 11 for different gates of the IC.
 13.  Click on the Reset button to reset the page.
+
 </div>
