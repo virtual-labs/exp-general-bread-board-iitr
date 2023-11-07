@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To familiarise with breadboard</title>
+
+    <!--JSplumb-->
+
+  
+
+    <link rel="stylesheet" href="css\jsplumbtoolkit-defaults.css">
+    <script src="js/jsplumb.min.js"></script>
+
+    <script src="js/jquery-latest.js"></script>
+    <script src="js/jquery-ui-latest.js"></script>
+    <script src="js/jquery.jsPlumb-1.3.9-all-min.js"></script>
+
+    <!--jQuery-->
+    <script src="js\jquery.min.js"></script>
+
+    <!--CSS files-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="radioBtnfun();">
+    
+    <div id="exp-name">
+        <h3>To familiarise with breadboard</h3>
+    </div>
+    <div id="simulation1">
+        <div class="left">
+            <div id="mid1">
+                <div class="box">
+                    <div class="msg-box">
+                        <p id="textHere">
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/board.png" class="slider-img">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <div>
+                <button class="right_btn">Instructions</button>
+                <div style="padding: 40px;margin-top:30px;">
+                    <ol style="list-style-type: none;float: left; text-align: left;">
+                        <li>1.Before performing the experiment, please read the manual carefully.</li><br/>
+                        <li>2.Read every slide and then click on next button given below for next slide.</li><br/>
+                        <li>3.For previous slide, click on previous button.</li><br>
+                    </ol>
+
+                </div>
+                <div style="margin-top: 150px;">
+                    <button class="right_btn1" onclick="Prev();"><</button>
+                    <button class="right_btn1" onclick="Next();">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="simulation2">
+        <div class="left">
+
+            <div id="mid2">
+                <br/>
+
+                <div id="supply2"></div>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                <div id="board2">
+                    <div id="R21">  <label id="r1" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 170px;visibility: hidden;"><B>A</B></label>
+                        <label id="r1" style="font-size: 15px;color: red;z-index:2;position: absolute;top:360px;left: 150px;visibility: hidden;"><B>R<sub>1</sub></B></label>
+                        <label id="r1" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 275px;left: 170px;visibility: hidden;"><B>B</B></label>
+                    </div>
+                    <div id="led21">
+                        <label id="l1" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 250px;visibility: hidden;"><B>A</B></label>
+                        <label id="l1" style="font-size: 15px;color: red;z-index:2;position: absolute;top:275px;left: 257px;visibility: hidden;"><B>L<sub>1</sub></B></label>
+                    <label id="l1" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 450px;left: 264px;visibility: hidden;"><B>C</B></label>
+                    </div>
+                    <div id="led22">
+                        <label id="l2" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 344px;visibility: hidden;"><B>A</B></label>
+                        <label id="l2" style="font-size: 15px;color: red;z-index:2;position: absolute;top:275px;left: 350px;visibility: hidden;"><B>L<sub>2</sub></B></label>
+                    <label id="l2" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 450px;left: 358px;visibility: hidden;"><B>C</B></label>
+                    </div>
+                    <div id="led23">
+                        <label id="l3" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 438px;visibility: hidden;"><B>A</B></label>
+                        <label id="l3" style="font-size: 15px;color: red;z-index:2;position: absolute;top:275px;left: 440px;visibility: hidden;"><B>L<sub>3</sub></B></label>
+                    <label id="l3" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 450px;left: 452px;visibility: hidden;"><B>C</B></label>
+                    </div>
+                </div>
+
+            </div>
+            <div id="mid3">
+                <br/>
+
+                <div id="supply3"></div>
+
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                <div id="board3">
+                    <div id="R31">
+                        <label id="r31" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 170px;visibility: hidden;"><B>A</B></label>
+                        <label id="r31" style="font-size: 15px;color: red;z-index:2;position: absolute;top:360px;left: 150px;visibility: hidden;"><B>R<sub>1</sub></B></label>
+                        <label id="r31" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 275px;left: 170px;visibility: hidden;"><B>B</B></label>
+                    </div>
+                    <div id="led31">
+                        <label id="l31" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 250px;visibility: hidden;"><B>A</B></label>
+                        <label id="l31" style="font-size: 15px;color: red;z-index:2;position: absolute;top:275px;left: 254px;visibility: hidden;"><B>L<sub>1</sub></B></label>
+                        <label id="l31" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 450px;left: 264px;visibility: hidden;"><B>C</B></label>
+    
+                    </div>
+                    <div id="R32">
+                        <label id="r32" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 386px;visibility: hidden;"><B>A</B></label>
+                        <label id="r32" style="font-size: 15px;color: red;z-index:2;position: absolute;top:360px;left: 366px;visibility: hidden;"><B>R<sub>2</sub></B></label>
+                        <label id="r32" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 275px;left: 386px;visibility: hidden;"><B>B</B></label>
+                    </div>
+                    <div id="led32">
+                        <label id="l32" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 468px;visibility: hidden;"><B>A</B></label>
+                        <label id="l32" style="font-size: 15px;color: red;z-index:2;position: absolute;top:275px;left: 473px;visibility: hidden;"><B>L<sub>2</sub></B></label>
+                        <label id="l32" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 450px;left: 482px;visibility: hidden;"><B>C</B></label>
+                    </div>
+                    <div id="R33">
+                        <label id="r33" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 604px;visibility: hidden;"><B>A</B></label>
+                        <label id="r33" style="font-size: 15px;color: red;z-index:2;position: absolute;top:360px;left: 584px;visibility: hidden;"><B>R<sub>3</sub></B></label>
+                        <label id="r33" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 275px;left: 604px;visibility: hidden;"><B>B</B></label>
+                    </div>
+                    <div id="led33">
+                        <label id="l33" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:450px;left: 686px;visibility: hidden;"><B>A</B></label>
+                        <label id="l33" style="font-size: 15px;color: red;z-index:2;position: absolute;top:275px;left: 693px;visibility: hidden;"><B>L<sub>3</sub></B></label>
+                    <label id="l33" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 450px;left: 700px;visibility: hidden;"><B>C</B></label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bottom">
+                <div>
+                    <button id="check" onclick="checkCircuit()" disabled>Check Connection</button>
+                    <button id="reset" onclick="reload()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div>
+                <div class="radioBtn">
+                    <div>
+                        
+                        <div>
+                            <label class="container">
+                                <input type="radio" checked="checked" name="radio" value="Series" oninput="radioBtnfun();">
+                                <span class="checkmark">Series</span>
+                            </label>
+                            <label class="container" style="margin-left: 30px;">
+                                <input type="radio" name="radio" value="Parallel" oninput="radioBtnfun();">
+                                <span class="checkmark">Parallel</span>
+                            </label>
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <button class="right_btn2" id="First2">Instructions</button>
+                <div class="Button-data" id="First_Data2" >
+                    <div class="panel">
+                        <button class="close-btn" id="close-btn2"><span>&#10005</span></button>
+                        <p>Series connections on Breadboard -</p>
+                        <br/>
+                        <ol type="1" style="padding-left: 20px;text-align: left;">
+                        <li>Click on the Component button to place components on the table.</li>
+                        <li>Make connections as per the circuit diagram.</li>
+                        <figure>
+                            <img src="images/image003.jpg" style="height: 160px; width:400px; margin-left: 15px;">
+                           <figcaption style="margin-left: 20px;">Fig. 1 Circuit diagram for series connections of LEDs</figcaption>
+                          </figure><br/>
+                        <li>Click on Check Connections button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
+                        <li>Observe output i.e. all LEDs will be ON.</li>
+                        <li>Now select Parallel connection.</li>
+                    </ol>
+                    </div>
+                </div>
+                <button class="right_btn2" id="First3">Instructions</button>
+                <div class="Button-data" id="First_Data3" >
+                    <div class="panel">
+                        <button class="close-btn" id="close-btn3"><span>&#10005</span></button>
+                        <p>Parallel connections on Breadboard -</p>
+                        <br/>
+                        <ol type="1" style="padding-left: 20px;text-align: left;">
+                            <li>Click on the Component button to place components on the table.</li>
+                            <li>Make connections as per the circuit diagram.</li>
+                            <figure>
+                                <img src="images/image005.jpg" style="height: 160px; width:300px; margin-left: 50px;">
+                                <figcaption style="margin-left: 20px;">Fig. 1 Circuit diagram for parallel connections of LEDs</figcaption>
+                              </figure>
+                              <br/>
+                            <li>Click on Check Connections button. If connections are right, click on ‘OK’, then Simulation will become active.</li>
+                            <li>Observe output i.e. all LEDs will be ON.</li>
+                            <li>Click on ‘>’ button for next slide.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="Components" id="seriesComp">
+                <button class="right_btn" id="second">Components</button>
+                <div style="margin-top: 25px;">
+                    <button class="comp-btn" id="breadbutton" style="margin-left: 40px;" onclick="breadboard2()">Breadboard</button>
+                    <button class="comp-btn" id="supplybutton" onclick="supply2()">Supply</button>
+                </div>
+                <div>
+                    <button class="comp-btn" id="resistancebutton" style="margin-left: 40px;" onclick="R21()">Resistance</button>                   
+                    <button class="comp-btn" id="ledbutton" onclick="led21();led22();led23();">LED</button>
+     
+                </div>
+            </div>
+            <div class="Components" id="parallelComp">
+                <button class="right_btn" id="second">Components</button>
+                <div style="margin-top: 25px;">
+                    <button class="comp-btn" id="breadbutton3" style="margin-left: 40px;" onclick="breadboard3()">Breadboard</button>
+                    <button class="comp-btn"  id="supplybutton3" onclick="supply3()">Supply</button>
+                </div>
+                <div>
+                    <button class="comp-btn" id="resistancebutton3" style="margin-left: 40px;" onclick="R31();R32();R33();" >Resistance</button>
+                    <button class="comp-btn" id="ledbutton3" onclick="led31();led32();led33();">LED</button>
+   
+                </div>
+            </div>
+            <div style="margin-top: 10px;">
+                    <button class="right_btn1" onclick="Prev();"><</button>
+                    <button class="right_btn1" onclick="Next();">></button>
+                </div>
+
+        </div>
+    </div>
+    <div id="simulation4">
+        <div class="left">
+
+            <div id="mid4">
+
+                <br/>
+
+                <div id="supply4"></div>
+
+                <div id="inputs">
+                    <label>A</label>
+                    <div id="input_A"><img src="images/switch_0.png" id="input_a" width="50" height="75" onclick="changeA()"></div>
+                    <label>B</label>
+                    <div id="input_B"><img src="images/switch_0.png" id="input_b" width="50" height="75" onclick="changeB()"></div>
+                </div>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+
+                <div id="board4">
+                    <div id="ic7432"></div>
+                    <div id="R41">
+                        <label id="r41" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:470px;left: 426px;visibility: hidden;"><B>A</B></label>
+                        <label id="r41" style="font-size: 15px;color: red;z-index:2;position: absolute;top:380px;left: 406px;visibility: hidden;"><B>R<sub>1</sub></B></label>
+                        <label id="r41" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 295px;left: 426px;visibility: hidden;"><B>B</B></label>
+                    </div>
+                    <div id="led41">
+                        <label id="l41" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top:470px;left: 510px;visibility: hidden;"><B>A</B></label>
+                        <label id="l41" style="font-size: 15px;color: red;z-index:2;position: absolute;top:295px;left: 515px;visibility: hidden;"><B>L<sub>1</sub></B></label>
+                        <label id="l41" style="font-size: 15px;color: BLACK;z-index:2;position: absolute;top: 470px;left: 523px;visibility: hidden;"><B>C</B></label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bottom">
+                <div>
+                    <button id="check1" onclick="checkCircuit4()" disabled>Check Connection</button>
+                    <button id="reset" onclick="reload()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="Button-data" id="First_Data4">
+                <div class="panel" style="height: 650px;">
+                    <button class="close-btn" id="close-btn4"><span>&#10005</span></button>
+                    <p>Familiarisation with Logic Gate connections of an IC 7432 - </p>
+                    <br/>
+                    <ol type="1" style="padding-left: 20px;text-align: justify;">
+                        <li>Click on the '<b>Component</b>' button to place components on the table.</li>
+                        <li>Connect pin 14 to the power supply (+5V) and pin 7 to ground (0V). (Refer pin diagram of IC 7432).</li>
+                        <li>Connect pin 1 and pin 2 to toggle switches A and B respectively.</li>
+                        <li>Connect corresponding output terminal (pin 3) to resistance (220 Ω). The other end of resistance is connected to positive (+) terminal of LED.</li>
+                        <li>Connect negative (–) terminal of the LED to ground.</li>
+                        <figure>
+                            <img src="images/image007.png" style="height: 150px; margin-left: 20px;">
+                            <figcaption style="margin-left: 100px;">Fig. 1 Pin diagram of IC 7432</figcaption>
+                          </figure>
+                          <br/>
+                        <li>Click on '<B>Check Connections</B>' button. If connections are right, click on ‘OK’, then Simulation will become active. </li>
+                        <li>Apply different combinations (0,0); (0,1); (1,0) and (1,1) to input terminals of one gate (say pins 1 and 2) by using toggle switches A and B.</li>
+                        <li>Observe the corresponding output on the LED.</li>
+                        <li>Fill the observed values in the Truth Table.</li>
+                        <li>Verify the Truth Table of OR gate from the experimental results by clicking on '<b>Check</b>' button, if outputs are correct then click on OK.</li>
+                        <li>Repeat steps 3 to 10 for different gates of the IC. </li>
+                    </ol>
+
+            
+                </div>
+            </div>
+            <div class="Button-data" id="Second_Data4">
+                <div class="Components2" style="padding: 10px;">
+                    <button class="close-btn" id="close-btn5" style="margin-top: 7px;"><span>&#10005</span></button>
+                    <div>
+                        <button id="breadbutton4" onclick="breadboard4()">Breadboard</button>
+                        <button id="supplybutton4" onclick="supply4()">Supply</button>
+                        <button id="icbutton4" onclick="ic7432()">IC7432</button>
+                    </div>
+                    <div>
+                        <button id="ledbutton4" onclick="led41()">LED</button>                      
+                        <button id="resistancebutton4" onclick="R41()">Resistance</button>                                        
+                        <button id="inputsbutton4" onclick="inputs()">Toggle Switches</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="right_btn" id="First4">Instructions</button>
+                <button class="right_btn" id="second4" style="margin-top: 20px;">Components</button>
+            </div>
+            
+
+            <div class="truth_table" id="table">
+                <h2>Truth table</h2>
+                <div id="a">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>A</th>
+                                <th>B</th>
+                                <th> A+B </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td><input id="a1" type="text"></td>
+
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>1</td>
+                                <td><input id="a2" type="text"></td>
+
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td><input id="a3" type="text"></td>
+
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><input id="a4" type="text"></td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <div class="table_btn">
+                        <button id="tab_reset" onclick="resetTable()">Reset</button>
+                        <button class="tab_check" id="tab_check" onclick="a()" disabled>Check</button>
+                       
+                    </div>
+                </div>
+              
+            </div>
+
+
+
+            <div style="margin-top: 10px;">
+                    <button class="right_btn1" onclick="Prev();"><</button>
+                    <button class="right_btn1" onclick="Next();">></button>
+                </div>
+
+        </div>
+    </div>
+    <div id="copyright">
+        <p style="font-weight:bold">&copy; Copyright 2022 Virtual Labs, IIT Roorkee</p>
+    </div>
+    <script src="js/index.js"></script>
+<script src="../assets/js/iframeResize.js"></script></body>
+
+<script src="js/graph.js"></script>
+
+</html>
