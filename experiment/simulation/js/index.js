@@ -167,6 +167,7 @@ function reload(event) {
     window.location.reload()
 }
 
+
 function BoardController() {
     var jsPlumbInstance = null;
     var endPoints = [];
@@ -224,7 +225,7 @@ function BoardController() {
         } else {
             Stroke = stroke;
         }
-        var endpointOptions = {
+       var endpointOptions = {
             isSource: true,
             isTarget: true,
             anchor: anchorArray,
@@ -270,11 +271,26 @@ First2.addEventListener('click', () => {
 close_btn2.addEventListener('click', () => {
     First_data2.classList.remove('visible')
 });
+
+
+
 //Components
 
+const check_button = document.getElementById('check');
+const check1_button = document.getElementById('check1');
+
+const bread_but=document.getElementById("breadbutton");
+const supply_but=document.getElementById("supplybutton");
+const r_but=document.getElementById("resistancebutton");
+const led_but=document.getElementById("ledbutton");
+
+//var p1;
 function breadboard2() {
     var x = document.getElementById("board2");
     x.style.visibility = "visible";
+
+    bread_but.disabled=true;
+    bread_but.style.cursor="not-allowed";
 
     var instance = new BoardController();
 
@@ -501,11 +517,15 @@ function breadboard2() {
         instance.addEndPoint(4.5, 'board2', 'row8', 'r199', [0, 0, 0, 1, 842.5, 282.5], 'blue');
         instance.addEndPoint(4.5, 'board2', 'row8', 'r200', [0, 0, 0, 1, 856, 282.5], 'blue');
     }
+    disabledButton();
 }
 
 function supply2() {
     var x = document.getElementById("supply2");
     x.style.visibility = "visible";
+
+    supply_but.disabled=true;
+    supply_but.style.cursor="not-allowed";
 
     var supply = new BoardController();
     supply.setJsPlumbInstance(jsPlumb);
@@ -513,12 +533,17 @@ function supply2() {
 
     supply.addEndPoint(8, 'supply2', 'VCC', 'VCC', [0, 0, -1, 0, 40, 45], 'blue', 'red');
     supply.addEndPoint(8, 'supply2', 'GND', 'GND', [0, 0, 1, 0, 80, 45], 'red', 'black');
+
+    disabledButton();
 }
 
 function R21() {
     var x = document.getElementById("R21");
     x.style.visibility = "visible";
     
+    r_but.disabled=true;
+    r_but.style.cursor="not-allowed";
+
     var elms = document.querySelectorAll("[id='r1']");
  
        for(var i = 0; i < elms.length; i++) 
@@ -536,11 +561,15 @@ function R21() {
     R21.addEndPoint(4.2, 'R21', 'R21_B', 'R21_B02', [0, 0, 0, 1, 8, 125], 'red');
     R21.addEndPoint(4.2, 'R21', 'R21_B', 'R21_B03', [0, 0, 0, 1, 8, 138.5], 'red');
     R21.addEndPoint(4.2, 'R21', 'R21_B', 'R21_B04', [0, 0, 0, 1, 8, 152], 'red');
+    disabledButton();
 }
 
 function led21() {
     var x = document.getElementById("led21");
     x.style.visibility = "visible";
+
+    led_but.disabled=true;
+    led_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='l1']");
  
@@ -564,12 +593,17 @@ for(var i = 0; i < elms.length; i++)
     led.addEndPoint(4.5, 'led21', 'led21_C', 'led21_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led21', 'led21_C', 'led21_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led21', 'led21_C', 'led21_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton();
     
 }
 
 function led22() {
     var x = document.getElementById("led22");
     x.style.visibility = "visible";
+
+    led_but.disabled=true;
+    led_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='l2']");
     for(var i = 0; i < elms.length; i++) 
@@ -590,11 +624,16 @@ function led22() {
     led.addEndPoint(4.5, 'led22', 'led22_C', 'led22_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led22', 'led22_C', 'led22_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led22', 'led22_C', 'led22_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton();
 }
 
 function led23() {
     var x = document.getElementById("led23");
     x.style.visibility = "visible";
+
+    led_but.disabled=true;
+    led_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='l3']");
     for(var i = 0; i < elms.length; i++) 
@@ -615,6 +654,19 @@ function led23() {
     led.addEndPoint(4.5, 'led23', 'led23_C', 'led23_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led23', 'led23_C', 'led23_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led23', 'led23_C', 'led23_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton();
+}
+
+function disabledButton()
+{
+
+  if(window.getComputedStyle(document.getElementById('board2')).visibility === "visible" && window.getComputedStyle(document.getElementById('led21')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('R21')).visibility === "visible" && window.getComputedStyle(document.getElementById('supply2')).visibility === "visible")
+  {
+  check_button.disabled=false;
+
+  }
 }
 
 
@@ -650,6 +702,15 @@ function checkCircuit() {
             g.addEdge(connections[key].endpoints[0].getParameter('groupName'), connections[key].endpoints[1].getParameter('groupName'));
         }
 
+        var edges= (g.numberofedges);
+   console.log('edges:'+edges)
+   if(edges == 0)
+   {
+       alert("No connections present.");   
+       return;
+   }
+
+
         if (
             (g.isConnected("VCC", "R21_A") && g.isConnected("R21_B", "led21_A") && g.isConnected("led21_C", "led22_A") && g.isConnected("led22_C", "led23_A") && g.isConnected("led23_C", "GND")) ||
             (g.isConnected("VCC", "R21_A") && g.isConnected("R21_B", "led21_A") && g.isConnected("led21_C", "led23_A") && g.isConnected("led23_C", "led22_A") && g.isConnected("led22_C", "GND")) ||
@@ -666,7 +727,9 @@ function checkCircuit() {
             (g.isConnected("VCC", "R21_B") && g.isConnected("R21_A", "led23_A") && g.isConnected("led23_C", "led22_A") && g.isConnected("led22_C", "led21_A") && g.isConnected("led21_C", "GND"))
         ) {
             con2 = true;
-            alert("Right Connections")
+            alert("Right Connections");
+          // p1.setEnabled(false);
+        
             document.getElementById("led21").style.backgroundImage = "url('images/led1.png')";
             document.getElementById("led22").style.backgroundImage = "url('images/led1.png')";
             document.getElementById("led23").style.backgroundImage = "url('images/led1.png')";
@@ -686,6 +749,14 @@ function checkCircuit() {
 
         for (key in connections) { // adding edges
             g.addEdge(connections[key].endpoints[0].getParameter('groupName'), connections[key].endpoints[1].getParameter('groupName'));
+        }
+
+        var edges= (g.numberofedges);
+        console.log('edges:'+edges)
+        if(edges == 0)
+        {
+            alert("No connections present.");   
+            return;
         }
 
         if (
@@ -762,9 +833,20 @@ close_btn3.addEventListener('click', () => {
 });
 
 //Components
+
+const bread3_but=document.getElementById("breadbutton3");
+const supply3_but=document.getElementById("supplybutton3");
+const r3_but=document.getElementById("resistancebutton3");
+const led3_but=document.getElementById("ledbutton3");
+
+
+
 function breadboard3() {
     var x = document.getElementById("board3");
     x.style.visibility = "visible";
+
+    bread3_but.disabled=true;
+    bread3_but.style.cursor="not-allowed";
 
     var instance = new BoardController();
 
@@ -991,11 +1073,17 @@ function breadboard3() {
         instance.addEndPoint(4.5, 'board3', 'row8', 'r199', [0, 0, 0, 1, 842.5, 282.5], 'blue');
         instance.addEndPoint(4.5, 'board3', 'row8', 'r200', [0, 0, 0, 1, 856, 282.5], 'blue');
     }
+
+    disabledButton3();
 }
 
 function supply3() {
     var x = document.getElementById("supply3");
     x.style.visibility = "visible";
+
+
+    supply3_but.disabled=true;
+    supply3_but.style.cursor="not-allowed";
 
     var supply = new BoardController();
     supply.setJsPlumbInstance(jsPlumb);
@@ -1003,12 +1091,17 @@ function supply3() {
 
     supply.addEndPoint(8, 'supply3', 'VCC', 'VCC', [0, 0, -1, 0, 40, 45], 'blue', 'red');
     supply.addEndPoint(8, 'supply3', 'GND', 'GND', [0, 0, 1, 0, 80, 45], 'red', 'black');
+
+    disabledButton3();
 }
 
 function R31() {
     var x = document.getElementById("R31");
     x.style.visibility = "visible";
     
+    r3_but.disabled=true;
+    r3_but.style.cursor="not-allowed";
+
     var elms = document.querySelectorAll("[id='r31']");
  
 for(var i = 0; i < elms.length; i++) 
@@ -1026,12 +1119,17 @@ for(var i = 0; i < elms.length; i++)
     R21.addEndPoint(4.2, 'R31', 'R31_B', 'R31_B02', [0, 0, 0, 1, 8, 125], 'red');
     R21.addEndPoint(4.2, 'R31', 'R31_B', 'R31_B03', [0, 0, 0, 1, 8, 138.5], 'red');
     R21.addEndPoint(4.2, 'R31', 'R31_B', 'R31_B04', [0, 0, 0, 1, 8, 152], 'red');
+
+    disabledButton3();
 }
 
 function R32() {
     var x = document.getElementById("R32");
     x.style.visibility = "visible";
     
+    r3_but.disabled=true;
+    r3_but.style.cursor="not-allowed";
+
     var elms = document.querySelectorAll("[id='r32']");
  
       for(var i = 0; i < elms.length; i++) 
@@ -1049,11 +1147,16 @@ function R32() {
     R21.addEndPoint(4.2, 'R32', 'R32_B', 'R32_B02', [0, 0, 0, 1, 8, 125], 'red');
     R21.addEndPoint(4.2, 'R32', 'R32_B', 'R32_B03', [0, 0, 0, 1, 8, 138.5], 'red');
     R21.addEndPoint(4.2, 'R32', 'R32_B', 'R32_B04', [0, 0, 0, 1, 8, 152], 'red');
+
+    disabledButton3();
 }
 
 function R33() {
     var x = document.getElementById("R33");
     x.style.visibility = "visible";
+
+    r3_but.disabled=true;
+    r3_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='r33']");
  
@@ -1071,11 +1174,16 @@ function R33() {
     R21.addEndPoint(4.2, 'R33', 'R33_B', 'R33_B02', [0, 0, 0, 1, 8, 125], 'red');
     R21.addEndPoint(4.2, 'R33', 'R33_B', 'R33_B03', [0, 0, 0, 1, 8, 138.5], 'red');
     R21.addEndPoint(4.2, 'R33', 'R33_B', 'R33_B04', [0, 0, 0, 1, 8, 152], 'red');
+
+    disabledButton3();
 }
 
 function led31() {
     var x = document.getElementById("led31");
     x.style.visibility = "visible";
+
+    led3_but.disabled=true;
+    led3_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='l31']");
  
@@ -1097,11 +1205,16 @@ function led31() {
     led.addEndPoint(4.5, 'led31', 'led31_C', 'led31_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led31', 'led31_C', 'led31_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led31', 'led31_C', 'led31_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton3();
 }
 
 function led32() {
     var x = document.getElementById("led32");
     x.style.visibility = "visible";
+
+    led3_but.disabled=true;
+    led3_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='l32']");
  
@@ -1122,11 +1235,16 @@ function led32() {
     led.addEndPoint(4.5, 'led32', 'led32_C', 'led32_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led32', 'led32_C', 'led32_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led32', 'led32_C', 'led32_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton3();
 }
 
 function led33() {
     var x = document.getElementById("led33");
     x.style.visibility = "visible";
+
+    led3_but.disabled=true;
+    led3_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='l33']");
  
@@ -1147,8 +1265,20 @@ function led33() {
     led.addEndPoint(4.5, 'led33', 'led33_C', 'led33_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led33', 'led33_C', 'led33_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led33', 'led33_C', 'led33_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton3();
 }
 
+function disabledButton3()
+{
+
+  if(window.getComputedStyle(document.getElementById('board3')).visibility === "visible" && window.getComputedStyle(document.getElementById('led31')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('R31')).visibility === "visible" && window.getComputedStyle(document.getElementById('supply3')).visibility === "visible")
+  {
+  check_button.disabled=false;
+
+  }
+}
 
 const First4 = document.getElementById('First4');
 const close_btn4 = document.getElementById('close-btn4');
@@ -1162,10 +1292,19 @@ close_btn4.addEventListener('click', () => {
     First_data4.classList.remove('visible')
 });
 
+const bread4_but=document.getElementById("breadbutton4");
+const supply4_but=document.getElementById("supplybutton4");
+const r4_but=document.getElementById("resistancebutton4");
+const led4_but=document.getElementById("ledbutton4");
+const ic4_but=document.getElementById("icbutton4");
+const inputs4_but=document.getElementById("inputsbutton4");
 
 function breadboard4() {
     var x = document.getElementById("board4");
     x.style.visibility = "visible";
+
+    bread4_but.disabled=true;
+    bread4_but.style.cursor="not-allowed";
 
     var instance = new BoardController();
 
@@ -1392,11 +1531,16 @@ function breadboard4() {
         instance.addEndPoint(4.5, 'board4', 'row8', 'r199', [0, 0, 0, 1, 842.5, 282.5], 'blue');
         instance.addEndPoint(4.5, 'board4', 'row8', 'r200', [0, 0, 0, 1, 856, 282.5], 'blue');
     }
+
+    disabledButton4();
 }
 
 function supply4() {
     var x = document.getElementById("supply4");
     x.style.visibility = "visible";
+
+    supply4_but.disabled=true;
+    supply4_but.style.cursor="not-allowed";
 
     var supply = new BoardController();
     supply.setJsPlumbInstance(jsPlumb);
@@ -1404,11 +1548,16 @@ function supply4() {
 
     supply.addEndPoint(8, 'supply4', 'VCC', 'VCC', [0, 0, -1, 0, 40, 45], 'blue', 'red');
     supply.addEndPoint(8, 'supply4', 'GND', 'GND', [0, 0, 1, 0, 80, 45], 'red', 'black');
+
+    disabledButton4();
 }
 
 function R41() {
     var x = document.getElementById("R41");
     x.style.visibility = "visible";
+
+    r4_but.disabled=true;
+    r4_but.style.cursor="not-allowed";
 
     var elms = document.querySelectorAll("[id='r41']");
  
@@ -1426,12 +1575,17 @@ for(var i = 0; i < elms.length; i++)
     R21.addEndPoint(4.2, 'R41', 'R41_B', 'R41_B02', [0, 0, 0, 1, 8, 125], 'red');
     R21.addEndPoint(4.2, 'R41', 'R41_B', 'R41_B03', [0, 0, 0, 1, 8, 138.5], 'red');
     R21.addEndPoint(4.2, 'R41', 'R41_B', 'R41_B04', [0, 0, 0, 1, 8, 152], 'red');
+
+    disabledButton4();
 }
 
 function led41() {
     var x = document.getElementById("led41");
     x.style.visibility = "visible";
     
+    led4_but.disabled=true;
+    led4_but.style.cursor="not-allowed";
+
     var elms = document.querySelectorAll("[id='l41']");
  
    for(var i = 0; i < elms.length; i++) 
@@ -1452,11 +1606,16 @@ function led41() {
     led.addEndPoint(4.5, 'led41', 'led41_C', 'led41_C03', [0, 0, 1, 0, 23.5, 104], 'red');
     led.addEndPoint(4.5, 'led41', 'led41_C', 'led41_C04', [0, 0, 1, 0, 23.5, 118.5], 'red');
     led.addEndPoint(4.5, 'led41', 'led41_C', 'led41_C05', [0, 0, 1, 0, 23.5, 132], 'red');
+
+    disabledButton4();
 }
 
 function ic7432() {
     var x = document.getElementById("ic7432");
     x.style.visibility = "visible";
+
+    ic4_but.disabled=true;
+    ic4_but.style.cursor="not-allowed";
 
     var ic7432 = new BoardController();
     ic7432.setJsPlumbInstance(jsPlumb);
@@ -1547,11 +1706,16 @@ function ic7432() {
         ic7432.addEndPoint(4.5, 'ic7432', 'ic7432_GND', 'ic7432_GND04', [0, 0, 1, -1, 90, 138.5], 'red');
         ic7432.addEndPoint(4.5, 'ic7432', 'ic7432_GND', 'ic7432_GND05', [0, 0, 1, -1, 90, 152], 'red');
     }
+
+    disabledButton4();
 }
 
 function inputs() {
     var x = document.getElementById("inputs");
     x.style.visibility = "visible";
+
+    inputs4_but.disabled=true;
+    inputs4_but.style.cursor="not-allowed";
 
     var inputs = new BoardController();
     inputs.setJsPlumbInstance(jsPlumb);
@@ -1560,6 +1724,20 @@ function inputs() {
     inputs.addEndPoint(4.5, 'inputs', 'input_A', 'input_A', [0, 0, 0, 0, 40, 90], 'red');
     inputs.addEndPoint(4.5, 'inputs', 'input_B', 'input_B', [0, 0, 0, 0, 108, 90], 'red');
 
+    disabledButton4();
+}
+
+
+function disabledButton4()
+{
+
+  if(window.getComputedStyle(document.getElementById('board4')).visibility === "visible" && window.getComputedStyle(document.getElementById('led41')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('R41')).visibility === "visible" && window.getComputedStyle(document.getElementById('supply4')).visibility === "visible" && 
+  window.getComputedStyle(document.getElementById('ic7432')).visibility === "visible" && (window.getComputedStyle(document.getElementById('input_a')).visibility === "visible" || window.getComputedStyle(document.getElementById('input_b')).visibility === "visible"))
+  {
+  check1_button.disabled=false;
+
+  }
 }
 
 var con4;
@@ -1578,6 +1756,13 @@ function checkCircuit4() {
         g.addEdge(connections[key].endpoints[0].getParameter('groupName'), connections[key].endpoints[1].getParameter('groupName'));
     }
 
+    var edges= (g.numberofedges);
+    console.log('edges:'+edges)
+    if(edges == 0)
+    {
+        alert("No connections present.");   
+        return;
+    }
     if (
         g.isConnected("VCC", "ic7432_VCC") && g.isConnected("GND", "ic7432_GND") && g.isConnected("led41_C", "GND") &&
 
@@ -1612,6 +1797,7 @@ function checkCircuit4() {
     ) {
         con4 = true;
         alert("Right Connections")
+
         showOutput();
         var a1 = document.getElementById("a1");
         var a2 = document.getElementById("a2");

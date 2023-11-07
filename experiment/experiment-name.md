@@ -1,1 +1,1 @@
-## Familiarisation of General Breadboard.
+## Familiarization with general bread board.

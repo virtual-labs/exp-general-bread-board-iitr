@@ -5,6 +5,7 @@ class Graph {
     constructor(noOfVertices) {
         this.noOfVertices = noOfVertices;
         this.AdjList = new Map();
+        this.numberofedges=0;
     }
 
 
@@ -25,6 +26,7 @@ class Graph {
         // Since graph is undirected, 
         // add an edge from w to v also 
         this.AdjList.get(w).push(v);
+        this.numberofedges++;
     }
 
     // Prints the vertex and adjacency list 
