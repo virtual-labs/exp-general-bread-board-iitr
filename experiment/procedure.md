@@ -60,7 +60,7 @@
 
 <center>  
 
-![](images/3.jpg)
+![](images/3_corrected.png)
 
 **Fig. 4 Circuit diagram for parallel connections of LEDs.**
 
